@@ -13,8 +13,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
-      title:
-        "CHANGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE",
+      title: "linked list project",
       // favicon: "./src/favicon.gif",
     }),
   ],

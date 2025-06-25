@@ -9,6 +9,7 @@ class LinkedList {
   }
 
   append(value) {
+    this.size++;
     let node = new Node(value, null);
 
     // if empty: new head
@@ -20,7 +21,6 @@ class LinkedList {
         current = current.next;
       }
       current.next = node;
-      this.size++;
     }
   }
   prepend(value) {
@@ -66,6 +66,21 @@ class LinkedList {
       return current;
     }
   }
+
+  pop() {
+    let current = this.head;
+    while (current.next.next) {
+      current = current.next;
+    }
+    current.next = null;
+    this.size--;
+  }
+  contains(value) {
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+  }
 }
 
 class Node {
@@ -80,9 +95,10 @@ let list = new LinkedList();
 list.append(11);
 list.append(22);
 list.append(33);
-list.append(44);
-list.append(55);
+// list.append(44);
+// list.append(55);
 
+list.pop();
 list.getSize();
 
-console.log(list.at(5));
+console.log(list.at(2));
